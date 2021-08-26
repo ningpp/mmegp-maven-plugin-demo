@@ -16,11 +16,6 @@ import me.ningpp.mmegp.demo.mapper.SysRoleMapper;
 import me.ningpp.mmegp.demo.mapper.SysRoleMenuMapper;
 import me.ningpp.mmegp.demo.service.AllService;
 
-/**
- * 
- * @author ningpp
- * @date 2021-08-26 13:49:06
- */
 @Service
 public class AllServiceImpl implements AllService {
 

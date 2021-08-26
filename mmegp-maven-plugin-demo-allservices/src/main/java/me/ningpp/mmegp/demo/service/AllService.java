@@ -10,11 +10,6 @@ import me.ningpp.mmegp.demo.entity.SysRole;
 import me.ningpp.mmegp.demo.entity.SysRoleExample;
 import me.ningpp.mmegp.demo.entity.SysRoleMenu;
 
-/**
- * 
- * @author ningpp
- * @date 2021-08-26 13:42:45
- */
 @Transactional
 public interface AllService {
     void insertRole(SysRole role);
