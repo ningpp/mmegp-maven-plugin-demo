@@ -7,7 +7,7 @@
     <parent>
         <groupId>io.github.ningpp</groupId>
         <artifactId>mmegp-maven-plugin-demo</artifactId>
-        <version>0.0.1</version>
+        <version>0.0.2</version>
     </parent>
     <artifactId>mmegp-maven-plugin-demo-mixedmapper</artifactId>
 
@@ -44,13 +44,5 @@
                 </executions>
             </plugin>
         </plugins>
-        <resources>
-            <resource>
-                <directory>target/generated-sources/mme/resources</directory>
-                <includes>
-                    <include>**/*.xml</include>
-                </includes>
-            </resource>
-        </resources>
     </build>
 </project>

@@ -6,7 +6,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.github.ningpp</groupId>
     <artifactId>mmegp-maven-plugin-demo</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
     <packaging>pom</packaging>
 
     <name>mmegp-maven-plugin-demo</name>
@@ -113,7 +113,7 @@
                 <plugin>
                     <groupId>io.github.ningpp</groupId>
                     <artifactId>mmegp-maven-plugin</artifactId>
-                    <version>0.0.2</version>
+                    <version>0.0.5</version>
                 </plugin>
             </plugins>
         </pluginManagement>
@@ -140,11 +140,6 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>3.2.0</version>
-                <configuration>
-                    <excludes>
-                        <exclude>**/*.java</exclude>
-                    </excludes>
-                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
