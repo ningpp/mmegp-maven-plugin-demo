@@ -1,4 +1,9 @@
 
+create table sys_user (
+    id varchar(64),
+    name varchar(255)
+);
+
 create table sys_role (
     id varchar(64),
     name varchar(255)

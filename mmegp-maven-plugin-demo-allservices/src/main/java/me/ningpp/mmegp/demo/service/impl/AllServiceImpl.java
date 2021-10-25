@@ -1,7 +1,11 @@
 package me.ningpp.mmegp.demo.service.impl;
 
 import java.util.List;
+import java.util.Locale;
 
+import org.mybatis.dynamic.sql.SqlBuilder;
+import org.mybatis.dynamic.sql.render.RenderingStrategies;
+import org.mybatis.dynamic.sql.where.condition.IsLike;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,9 +15,12 @@ import me.ningpp.mmegp.demo.entity.SysRole;
 import me.ningpp.mmegp.demo.entity.SysRoleExample;
 import me.ningpp.mmegp.demo.entity.SysRoleMenu;
 import me.ningpp.mmegp.demo.entity.SysRoleMenuExample;
+import me.ningpp.mmegp.demo.entity.SysUser;
 import me.ningpp.mmegp.demo.mapper.SysMenuMapper;
 import me.ningpp.mmegp.demo.mapper.SysRoleMapper;
 import me.ningpp.mmegp.demo.mapper.SysRoleMenuMapper;
+import me.ningpp.mmegp.demo.mapper.SysUserDynamicSqlSupport;
+import me.ningpp.mmegp.demo.mapper.SysUserMapper;
 import me.ningpp.mmegp.demo.service.AllService;
 
 @Service
@@ -25,6 +32,8 @@ public class AllServiceImpl implements AllService {
     private SysRoleMenuMapper sysRoleMenuMapper;
     @Autowired
     private SysMenuMapper sysMenuMapper;
+    @Autowired
+    private SysUserMapper sysUserMapper;
 
     @Override
     public void insertRole(SysRole role) {
@@ -62,6 +71,19 @@ public class AllServiceImpl implements AllService {
     @Override
     public void deleteRoleMenu(Long roleMenuId) {
         sysRoleMenuMapper.deleteByPrimaryKey(roleMenuId);
+    }
+
+    @Override
+    public void insertUser(SysUser user) {
+        sysUserMapper.insert(user);
+    }
+
+    @Override
+    public List<SysUser> queryUser(String nameLike) {
+        return sysUserMapper.selectMany(SqlBuilder.select(SysUserMapper.selectList)
+                .from(SysUserDynamicSqlSupport.sysUser)
+                .where().and(SysUserDynamicSqlSupport.name, IsLike.of(String.format(Locale.ENGLISH, "%%%s%%", nameLike)))
+                .build().render(RenderingStrategies.MYBATIS3));
     }
 
 }

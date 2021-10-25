@@ -15,8 +15,23 @@ import me.ningpp.mmegp.demo.entity.SysMenuExample;
 import me.ningpp.mmegp.demo.entity.SysRole;
 import me.ningpp.mmegp.demo.entity.SysRoleExample;
 import me.ningpp.mmegp.demo.entity.SysRoleMenu;
+import me.ningpp.mmegp.demo.entity.SysUser;
 
 public class AllServiceTest extends DemoApplicationStarter {
+
+    @Test
+    void userTest() {
+        SysUser user = new SysUser();
+        user.setId(uuid());
+        user.setName("javascript");
+        allService.insertUser(user);
+
+        List<SysUser> users = allService.queryUser("java");
+        assertEquals(1, users.size());
+        assertEquals(user.getId(), users.get(0).getId());
+        users = allService.queryUser("typescript");
+        assertEquals(0, users.size());
+    }
 
     @Test
     void allTest() {

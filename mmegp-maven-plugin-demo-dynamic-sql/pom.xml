@@ -1,15 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>io.github.ningpp</groupId>
         <artifactId>mmegp-maven-plugin-demo</artifactId>
         <version>0.0.3</version>
     </parent>
-    <artifactId>mmegp-maven-plugin-demo-mixedmapper</artifactId>
+    <artifactId>mmegp-maven-plugin-demo-dynamic-sql</artifactId>
 
     <dependencies>
         <dependency>
@@ -20,6 +16,14 @@
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.mybatis.dynamic-sql</groupId>
+            <artifactId>mybatis-dynamic-sql</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.annotation</groupId>
+            <artifactId>javax.annotation-api</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
@@ -29,7 +33,7 @@
                 <artifactId>mmegp-maven-plugin</artifactId>
                 <extensions>true</extensions>
                 <configuration>
-                    <mbgContextTargetRuntime>MyBatis3</mbgContextTargetRuntime>
+                    <mbgContextTargetRuntime>MyBatis3DynamicSqlV2</mbgContextTargetRuntime>
                     <modelPackageName>me.ningpp.mmegp.demo.entity</modelPackageName>
                     <mapperPackageName>me.ningpp.mmegp.demo.mapper</mapperPackageName>
                     <xmlOutputDirectory>me/ningpp/mmegp/demo/mapper</xmlOutputDirectory>

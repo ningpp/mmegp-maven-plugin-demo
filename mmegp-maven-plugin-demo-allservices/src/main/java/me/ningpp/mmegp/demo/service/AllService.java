@@ -9,6 +9,7 @@ import me.ningpp.mmegp.demo.entity.SysMenuExample;
 import me.ningpp.mmegp.demo.entity.SysRole;
 import me.ningpp.mmegp.demo.entity.SysRoleExample;
 import me.ningpp.mmegp.demo.entity.SysRoleMenu;
+import me.ningpp.mmegp.demo.entity.SysUser;
 
 @Transactional
 public interface AllService {
@@ -25,4 +26,8 @@ public interface AllService {
     List<SysRoleMenu> getRoleMenus(String roleId);
 
     void deleteRoleMenu(Long roleMenuId);
+
+    void insertUser(SysUser user);
+
+    List<SysUser> queryUser(String nameLike);
 }
