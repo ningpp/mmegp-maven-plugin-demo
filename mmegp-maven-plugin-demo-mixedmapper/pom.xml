@@ -34,6 +34,7 @@
                     <mapperPackageName>me.ningpp.mmegp.demo.mapper</mapperPackageName>
                     <xmlOutputDirectory>me/ningpp/mmegp/demo/mapper</xmlOutputDirectory>
                     <javaClientGeneratorConfigurationType>MIXEDMAPPER</javaClientGeneratorConfigurationType>
+                    <generatorConfigFilePath>${basedir}/mmegpGeneratorConfig.xml</generatorConfigFilePath>
                 </configuration>
                 <executions>
                     <execution>
