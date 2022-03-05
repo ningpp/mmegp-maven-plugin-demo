@@ -3,7 +3,7 @@
     <parent>
         <groupId>io.github.ningpp</groupId>
         <artifactId>mmegp-maven-plugin-demo</artifactId>
-        <version>0.0.3</version>
+        <version>0.0.4-SNAPSHOT</version>
     </parent>
     <artifactId>mmegp-maven-plugin-demo-dynamic-sql</artifactId>
 
