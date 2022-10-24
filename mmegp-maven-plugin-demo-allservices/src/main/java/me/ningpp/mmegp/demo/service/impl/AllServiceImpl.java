@@ -9,6 +9,7 @@ import org.mybatis.dynamic.sql.where.condition.IsLike;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import me.ningpp.mmegp.demo.dao.SysUserRoleMapper;
 import me.ningpp.mmegp.demo.entity.SysMenu;
 import me.ningpp.mmegp.demo.entity.SysMenuExample;
 import me.ningpp.mmegp.demo.entity.SysRole;
@@ -21,6 +22,8 @@ import me.ningpp.mmegp.demo.mapper.SysRoleMapper;
 import me.ningpp.mmegp.demo.mapper.SysRoleMenuMapper;
 import me.ningpp.mmegp.demo.mapper.SysUserDynamicSqlSupport;
 import me.ningpp.mmegp.demo.mapper.SysUserMapper;
+import me.ningpp.mmegp.demo.model.SysUserRole;
+import me.ningpp.mmegp.demo.model.SysUserRoleExample;
 import me.ningpp.mmegp.demo.service.AllService;
 
 @Service
@@ -34,6 +37,8 @@ public class AllServiceImpl implements AllService {
     private SysMenuMapper sysMenuMapper;
     @Autowired
     private SysUserMapper sysUserMapper;
+    @Autowired
+    private SysUserRoleMapper sysUserRoleMapper;
 
     @Override
     public void insertRole(SysRole role) {
@@ -84,6 +89,18 @@ public class AllServiceImpl implements AllService {
                 .from(SysUserDynamicSqlSupport.sysUser)
                 .where().and(SysUserDynamicSqlSupport.name, IsLike.of(String.format(Locale.ENGLISH, "%%%s%%", nameLike)))
                 .build().render(RenderingStrategies.MYBATIS3));
+    }
+
+    @Override
+    public void insertUserRole(SysUserRole userRole) {
+        sysUserRoleMapper.insert(userRole);
+    }
+
+    @Override
+    public List<SysUserRole> queryUserRoles(String userId) {
+        SysUserRoleExample example = new SysUserRoleExample();
+        example.createCriteria().andUserIdEqualTo(userId);
+        return sysUserRoleMapper.selectByExample(example);
     }
 
 }

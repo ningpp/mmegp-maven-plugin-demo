@@ -10,6 +10,7 @@ import me.ningpp.mmegp.demo.entity.SysRole;
 import me.ningpp.mmegp.demo.entity.SysRoleExample;
 import me.ningpp.mmegp.demo.entity.SysRoleMenu;
 import me.ningpp.mmegp.demo.entity.SysUser;
+import me.ningpp.mmegp.demo.model.SysUserRole;
 
 @Transactional
 public interface AllService {
@@ -30,4 +31,9 @@ public interface AllService {
     void insertUser(SysUser user);
 
     List<SysUser> queryUser(String nameLike);
+
+    void insertUserRole(SysUserRole userRole);
+
+    List<SysUserRole> queryUserRoles(String userId);
+
 }

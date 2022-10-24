@@ -20,3 +20,9 @@ create table sys_role_menu (
     role_id varchar(64),
     menu_id varchar(64)
 );
+
+create table sys_user_role (
+    id identity,
+    user_id varchar(64),
+    role_id varchar(64)
+);

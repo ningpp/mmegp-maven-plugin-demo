@@ -16,8 +16,23 @@ import me.ningpp.mmegp.demo.entity.SysRole;
 import me.ningpp.mmegp.demo.entity.SysRoleExample;
 import me.ningpp.mmegp.demo.entity.SysRoleMenu;
 import me.ningpp.mmegp.demo.entity.SysUser;
+import me.ningpp.mmegp.demo.model.SysUserRole;
 
 public class AllServiceTest extends DemoApplicationStarter {
+
+    @Test
+    void userRoleTest() {
+        SysUserRole userRole = new SysUserRole();
+        userRole.setUserId(uuid());
+        userRole.setRoleId(uuid());
+        allService.insertUserRole(userRole);
+        assertTrue(userRole.getId() > 0);
+
+        List<SysUserRole> userRoles = allService.queryUserRoles(userRole.getUserId());
+        assertEquals(1, userRoles.size());
+        assertEquals(userRole.getId(), userRoles.get(0).getId());
+        assertEquals(userRole.getRoleId(), userRoles.get(0).getRoleId());
+    }
 
     @Test
     void userTest() {

@@ -33,11 +33,6 @@
                 <artifactId>mmegp-maven-plugin</artifactId>
                 <extensions>true</extensions>
                 <configuration>
-                    <mbgContextTargetRuntime>MyBatis3DynamicSqlV2</mbgContextTargetRuntime>
-                    <modelPackageName>me.ningpp.mmegp.demo.entity</modelPackageName>
-                    <mapperPackageName>me.ningpp.mmegp.demo.mapper</mapperPackageName>
-                    <xmlOutputDirectory>me/ningpp/mmegp/demo/mapper</xmlOutputDirectory>
-                    <javaClientGeneratorConfigurationType>MIXEDMAPPER</javaClientGeneratorConfigurationType>
                     <generatorConfigFilePath>${basedir}/mmegpGeneratorConfig.xml</generatorConfigFilePath>
                 </configuration>
                 <executions>
