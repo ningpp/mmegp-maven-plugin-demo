@@ -7,7 +7,7 @@
 
         <commentGenerator>
             <property name="suppressDate" value="true" />
-            <property name="suppressAllComments" value="false" />
+            <property name="suppressAllComments" value="true" />
             <property name="addRemarkComments" value="false" />
             <property name="removeDateAnnotation" value="true" />
         </commentGenerator>
@@ -29,7 +29,7 @@
 
         <commentGenerator>
             <property name="suppressDate" value="true" />
-            <property name="suppressAllComments" value="false" />
+            <property name="suppressAllComments" value="true" />
             <property name="addRemarkComments" value="false" />
             <property name="removeDateAnnotation" value="true" />
         </commentGenerator>

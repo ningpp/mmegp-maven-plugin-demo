@@ -6,7 +6,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.github.ningpp</groupId>
     <artifactId>mmegp-maven-plugin-demo</artifactId>
-    <version>0.0.4-SNAPSHOT</version>
+    <version>1.0.0</version>
     <packaging>pom</packaging>
 
     <name>mmegp-maven-plugin-demo</name>
@@ -44,7 +44,7 @@
     <properties>
         <java.version>17</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <mmegp.version>1.0.0-SNAPSHOT</mmegp.version>
+        <mmegp.version>1.0.0</mmegp.version>
         <mybatis.version>3.5.9</mybatis.version>
         <mybatis.dynamic-sql.version>1.4.0</mybatis.dynamic-sql.version>
         <spring-boot.version>2.5.0</spring-boot.version>
@@ -161,7 +161,7 @@
             <plugin>
                 <groupId>org.sonatype.plugins</groupId>
                 <artifactId>nexus-staging-maven-plugin</artifactId>
-                <version>1.6.7</version>
+                <version>1.6.13</version>
                 <extensions>true</extensions>
                 <configuration>
                     <serverId>ossrh</serverId>
